@@ -1,27 +1,26 @@
 package ru.netology;
 
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Cat {
-    private final String id;
+public class Cat {private final String id;
     private final String text;
     private final String type;
     private final String user;
-    private final String upvote;
+    private final String upvotes;
 
-    //Аннотации @JsonProperty в классе Cat.java
-// нужны чтобы конструктор понимаю какие поля в json соотносятся с полями в java классе.
     public Cat(
             @JsonProperty("id") String id,
             @JsonProperty("text") String text,
             @JsonProperty("type") String type,
             @JsonProperty("user") String user,
-            @JsonProperty("upvotes") String upvote) {
+            @JsonProperty("upvotes") String upvotes)
+    {
         this.id = id;
         this.text = text;
         this.type = type;
         this.user = user;
-        this.upvote = upvote;
+        this.upvotes = upvotes;
     }
 
     public String getId() {
@@ -40,17 +39,18 @@ public class Cat {
         return user;
     }
 
-    public String getUpvote() {
-        return upvote;
+    public String getUpvotes() {
+        return upvotes;
     }
 
     @Override
     public String toString() {
-        return "Cat { " + '\n' +
-                "id= " + id + '\n' +
-                "text= " + text + '\n' +
-                "type= " + type + '\n' +
-                "user= " + user + '\n' +
-                "upvotes= " + upvote + " }" + '\n';
+        return "Cat{" +
+                "id=" + id +
+                ", text='" + text + '\'' +
+                ", type='" + type + '\'' +
+                ", user='" + user + '\'' +
+                ", upvotes='" + upvotes + '\'' +
+                '}';
     }
 }
